@@ -1,0 +1,346 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+  } 
+  :root{
+    --text-color: #fff;
+    --main-color: #FF3333;
+    --other-color: #fcfcfc;
+    --h1-font: 6rem;
+    --p-font: 1rem;
+  }
+  body{
+    color: var(--text-color);
+    background-image: url(/images/background.jpg);
+    width: 100vw;
+    background-repeat: no-repeat;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 8%;
+    transition: all .55s ease;
+    background: transparent;
+  }
+  .logo{
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .logo i{
+    color: var(--main-color);
+    font-size: 55px;
+    margin-right: 5px;
+  }
+  .navbar{
+    display: flex;
+  }
+  .navbar a{
+    color: var(--other-color);
+    font-size: var(--p-font);
+    font-weight: 500;
+    margin: 0 30px;
+    transition: all .55s ease;
+  }
+  .navbar a:hover{
+    color: var(--main-color);
+  }
+  .header-icons{
+    display: flex;
+    align-items: center;
+  }
+  #menu-icon{
+    font-size: 35px;
+    color: var(--text-color);
+    z-index: 10001;
+    cursor: pointer;
+  }
+  .header-icons i{
+    margin-right: 25px;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all .55s ease;
+  }
+  section{
+    padding: 0 15%;
+  }
+  .home{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+  }
+  .home-text h1{
+    font-size: var(--h1-font);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .home-text i{
+    font-size: 30px;
+  }
+  .btn{
+    display: inline-block;
+    padding: 15px 70px;
+    font-size: 16px;
+    font-weight: 500;
+    background: #FF0000;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    transition: all .55s ease;
+  }
+  .btn-sign-in{
+    display: inline-block;
+    padding: 7px 7px;
+    font-size: 16px;
+    font-weight: 20;
+    background: #FF0000;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    transition: all .55s ease;
+  }
+  .btn:hover{
+    background: #FF0066;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+  }
+  .bottom{
+    position: absolute;
+    bottom: 35px;
+    right: 8%;
+    display: flex;
+    align-items: center;
+    color: red;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .home::before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease-out;
+  }
+  .home.show::before{
+    opacity: 1;
+    pointer-events: auto;
+  }
+  /*Form */
+  .form-container{
+    position: absolute;
+    max-width: 320px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(1.2);
+    z-index: 101;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition:all 0.4s ease-out;
+  }
+  .form-container.active .signup-form{
+    display: block;
+  }
+  .form-container.active .login-form{
+    display: none;
+  }
+
+  .home.show .form-container{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%) scale(1);
+  }
+  .signup-form{
+    display: none;
+  }
+  .from-close{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #FF0000;
+    font-size: 22px;
+    opacity: 0.7;
+    cursor: pointer;
+  }
+  .form-container h2{
+    font-size: 25px;
+    color: #FF0000;
+    text-align: center;
+  }
+  .input-box{
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    height: 40px;
+  }
+  .input-box input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0 30px;
+    transition: all 0.2s ease;
+    color: palevioletred;
+    border-bottom: 1px solid #aaaaaa;
+  }
+  .input-box input:focus{
+    border-color: plum;
+  }
+  .input-box i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: pink;
+  }
+  .input-box i.email{
+    left: 0;
+  }
+  .input-box i.password{
+    left: 0;
+  }
+  .input-box input:focus ~ i.email,
+  .input-box input:focus ~ i.password{
+    color: plum;
+  }
+  .input-box i.pw-hide{
+    right: 0;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  .option-field{
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .form-container a{
+    color: blueviolet;
+    font-size: 12px;
+  }
+  .form-container a:hover{
+    text-decoration: underline;
+  }
+  .checkbox{
+    display: flex;
+    column-gap: 8px;
+    white-space: nowrap;
+  }
+  .checkbox{
+    accent-color: #7d2ae8;
+  }
+  .checkbox label{
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+    color: rgb(7, 11, 236);
+  }
+  .form-container .button{
+    background: #e903ca;
+    margin-top: 30px;
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 10px;
+  }
+  .login-signup{
+    color: black;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 15px;
+
+  }
+  
+  @media(max-width: 1625px){
+    section{
+      padding: 220px 18%;
+    }
+    :root{
+      --h1-font: 5rem;
+    }
+  }
+  @media(max-width: 1400px){
+    section{
+      padding: 220px 18%;
+    }
+    :root{
+      --h1-font: 4rem;
+    }
+  
+  }
+  @media(max-width: 1150px){
+    section {
+      padding: 220px 18%;
+    }
+  }
+  @media(max-width: 1000px){
+    section{
+      padding: 220px 18%;
+    }
+    :root{
+      --h1-font: 3.5rem;
+    }
+    .home-text{
+      text-align: center;
+    }
+  }
+  @media(max-width: 890px){
+    section{
+      padding: 220px 18%;
+    }
+    .navbar{
+      position: absolute;
+      top: 100%;
+      right: -200%;
+      width: 100px;
+      height: auto;
+      background-color: #FF99FF;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 4px;
+      transition: all .55s ease;
+    }
+    .navbar a{
+      display: block;
+      margin: 4px 0;
+      transition: all .45s ease;
+    }
+    .navbar a:hover{
+      transform: translateY(5px);
+      color: var(--main-color);
+    }
+    .navbar.open{
+      right: 2%;
+    }
+  }
+  @media(max-width: 600px){
+    section{
+      padding: 220px 18%;
+    }
+    .home{
+      height: 100%;
+    }
+    :root{
+      --h1-font: 2.5rem
+    }
+  }
+  

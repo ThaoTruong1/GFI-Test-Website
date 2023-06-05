@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website App</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/login/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" >
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    </head>
+<body>
+  <!--header design-->
+  <header>
+    <a href="" class="logo"><i class='bx bxs-donate-heart'></i>Lover</a>
+    <ul class="navbar">
+      <li><a href="" class="active">Products</a></li>
+      <li><a href="">Learn</a></li>
+      <li><a href="">Safety</a></li>
+      <li><a href="">Support</a></li>
+      <li><a href="">Download</a></li>
+      <a href="/login/index.html"><label class="btn btn-sign-in" for="">Sign In</label></a>
+    </ul>
+
+    <div class="header-icons">
+      
+      <div class="bx bx-menu" id="menu-icon">
+      </div>
+    </div>
+  </header>
+  <section class="home">
+    <div class="home-text">
+      <h1>Swipe Right <sup><i class='bx bx-registered'></i></sup></h1>
+      <a href="/login/index.html" class="btn">Create account</a>
+    </div>
+  </section>
+  <p class="bottom">All photos are of models and used for illustrative purposes only</p>
+  <script>
+  var menu = document.querySelector('#menu-icon');
+  var navbar = document.querySelector('.navbar');
+  menu.onclick = ()=>{
+    menu.classList.toggle('bx-x');
+    navbar.classList.toggle('open');
+  }
+  </script>
+</body>
+</html>
+  
